@@ -1,0 +1,4 @@
+A simple binding to pastebin.com public api(http://pastebin.com/api.php) through DRAKMA http client.
+
+The core function is PASTEBIN.COM-API:PASTEBIN-POST
+It has some documentation, which you can read using CL:DESCRIBE, for example.
