@@ -55,7 +55,7 @@
                                    (open-with-default-browser nil))
 "Sends POST request to http://pastebin.com attempting to paste
 code designated by CONTENT. On success, returns PURI:URI structure that
-designate address of the paste committed.
+designates address of the paste committed.
 
 CONTENT may be a string, representing code itself or a pathname,
 representing file, contents of which should be added to pastebin.
