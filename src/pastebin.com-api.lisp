@@ -46,7 +46,7 @@
                                    (private nil)
                                    (subdomain nil)
                                    (expire-date :never)
-                                   (format nil)                      
+                                   (format T)
                                    (external-format :default)
                                    #+win32
                                    (open-with-default-browser nil))
@@ -54,8 +54,8 @@
 code designated by CONTENT. On success, returns PURI:URI structure that
 designate address of the paste committed.
 
-CONTENT may be a string, designating code itself or a pathname,
-designating file, contents of which should be added to pastebin.
+CONTENT may be a string, representing code itself or a pathname,
+representing file, contents of which should be added to pastebin.
 
 :NAME, :EMAIL and :SUBDOMAIN should be a strings, designating name or title
 of your paste, email, for sending conformation email with paste link, and
@@ -70,15 +70,16 @@ you paste will not be added to 'recent posts' etc.
 It may be :NEVER (the default case), :TEN-MINUTES, :HOUR, :DAY, :MONTH, 
 or NIL(which is the same as :NEVER)
 
-:FORMAT designate pastebin syntax highlighting format. It can be NIL,
+:FORMAT argument describe pastebin syntax highlighting format. It can be NIL,
 which means no highlighting. It also can be T, which only make sense if
 CONTENT is a pathname - in this case format will be guessed by a file extension
 of that pathname. And finally, it can also be a string designator which
-designate file format name. List of available file format names can be
+designate format name. List of available format names can be
 obtained by function LIST-AVAILABLE-FILE-FORMATS.
 
-:EXTERNAL-FORMAT is only used when CONTENT is a pathname. It designate
-implementation dependent external format, in which that file should be read.
+:EXTERNAL-FORMAT is only used when CONTENT is a pathname, and is passed to
+CL:OPEN function. It indicates implementation dependent external format,
+in which that file should be read.
 
 Finally, on Windows, there's another available parameter:
 :OPEN-WITH-DEFAULT-BROWSER
