@@ -123,6 +123,8 @@ link with default browser."
         (http-request
           "http://pastebin.com/api_public.php"
           :method :post
+          :external-format-out :utf-8
+          :external-format-in :utf-8
           :parameters (list (cons "paste_private" private)
                             (cons "paste_expire_date" expire-date)
                             (cons "paste_name" name)
