@@ -63,14 +63,14 @@ subdomain of pastebin.com, to which code should be pasted, correspondingly.
 This values can also be NILs, in which case they will be interpreted as
 empty strings
 
-:PRIVATE designate privacy level of the paste. When this parameter is NIL,
+:PRIVATE designates privacy level of the paste. When this parameter is NIL,
 you paste will not be added to 'recent posts' etc.
 
-:EXPIRE-DATE designate expiration date of the paste.
+:EXPIRE-DATE designates expiration date of the paste.
 It may be :NEVER (the default case), :TEN-MINUTES, :HOUR, :DAY, :MONTH, 
 or NIL(which is the same as :NEVER)
 
-:FORMAT argument describe pastebin syntax highlighting format. It can be NIL,
+:FORMAT argument describes pastebin syntax highlighting format. It can be NIL,
 which means no highlighting. It also can be T, which only make sense if
 CONTENT is a pathname - in this case format will be guessed by a file extension
 of that pathname. And finally, it can also be a string designator which
