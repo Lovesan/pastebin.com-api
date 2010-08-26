@@ -35,14 +35,14 @@
 #+win32
 (defun open-with-file-protocol-handler (path)
   (declare (type string path))
-  (not (member
-         (asdf:run-shell-command
-           (concatenate
-             'string
-             "rundll32 url.dll, FileProtocolHandler "
-             path))
-         '(0 nil)
-         :test #'eql)))
+  (member
+    (asdf:run-shell-command
+      (concatenate
+        'string
+        "rundll32 url.dll, FileProtocolHandler "
+        path))
+    '(0 nil)
+    :test #'eql))
 
 (defun pastebin-post (content &key (name nil)
                                    (email nil)
